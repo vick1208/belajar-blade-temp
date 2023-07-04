@@ -31,7 +31,7 @@ Route::get('/user', function () {
 Route::get(
     '/html-encode',
     function (Request $request) {
-        return view("utils.html-encoding", [
+        return view("other.html-encoding", [
             "name" => $request->input("name")
         ]);
     }

@@ -10,7 +10,7 @@ class ClasscssTest extends TestCase
 {
     public function testClass()
     {
-        $this->view("class-css", [
+        $this->view("other.class-css", [
             "hobbies" => [
                 [
                     "name" => "Painting",

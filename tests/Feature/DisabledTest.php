@@ -10,7 +10,7 @@ class DisabledTest extends TestCase
 {
     public function testDisabledBlade()
     {
-        $this->view("utils.disabled", ["name" => "Eko Kunthadi"])
+        $this->view("other.disabled", ["name" => "Eko Kunthadi"])
             ->assertDontSeeText("Eko Kunthadi")
             ->assertSeeText('Hello {{ $name }}');
     }

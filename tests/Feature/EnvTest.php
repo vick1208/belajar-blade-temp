@@ -10,7 +10,7 @@ class EnvTest extends TestCase
 {
     public function testEnv()
     {
-        $this->view("utils.env", [])
+        $this->view("other.env", [])
             ->assertSeeText("This is test environment");
     }
 }

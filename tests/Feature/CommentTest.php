@@ -9,7 +9,7 @@ use Tests\TestCase;
 class CommentTest extends TestCase
 {
     public function testComment(){
-        $this->view("utils.comment")
+        $this->view("other.comment")
         ->assertSeeText("Comment")
         ->assertDontSeeText("Vicky");
     }
