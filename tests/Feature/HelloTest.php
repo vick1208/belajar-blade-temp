@@ -24,4 +24,16 @@ class HelloTest extends TestCase
         $this->view("hello.user",["name" => "Eko Kunthadi"])
         ->assertSeeText("Eko Kunthadi");
     }
+    public function testIf()
+    {
+        $this->view("ifstate", ["hobbies" => []] )
+            ->assertSeeText("I don't have any hobbies!", false);
+
+        $this->view("ifstate", ["hobbies" => ["Coding"]] )
+            ->assertSeeText("I have one hobby!");
+
+        $this->view("ifstate", ["hobbies" => ["Coding", "Gaming"]] )
+            ->assertSeeText("I have multiple hobbies!");
+    }
+    
 }

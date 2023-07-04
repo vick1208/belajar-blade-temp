@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,17 +14,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', fn () => view('welcome'));
+
+Route::get(
+    '/hello',
+    fn () => view('hello', [
+        "name" => "Gol D Roger"
+    ])
+);
+Route::get('/user', function () {
+    return view('hello.user', [
+        "name" => "Gol D Roger"
+    ]);
 });
 
-Route::get('/hello', function () {
-    return view('hello',[
-        "name" => "Gol D Roger"
-    ]);
-});
-Route::get('/user', function () {
-    return view('hello.user',[
-        "name" => "Gol D Roger"
-    ]);
-});
+Route::get(
+    '/html-encode',
+    function (Request $request) {
+        return view("html-encoding", [
+            "name" => $request->input("name")
+        ]);
+    }
+);
