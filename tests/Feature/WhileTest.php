@@ -10,7 +10,7 @@ class WhileTest extends TestCase
 {
     public function testWhile()
     {
-        $this->view("while", ["i" => 0])
+        $this->view("looping.while", ["i" => 0])
             ->assertSeeText("Current value is 0")
             ->assertSeeText("Current value is 1")
             ->assertSeeText("Current value is 2")
