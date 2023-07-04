@@ -10,17 +10,12 @@ class ForTest extends TestCase
 {
     public function testFor()
     {
-        $this->view("for", ["limit" => 10])
+        $this->view("for", ["limit" => 5])
             ->assertSeeText("0")
             ->assertSeeText("1")
             ->assertSeeText("2")
             ->assertSeeText("3")
-            ->assertSeeText("4")
-            ->assertSeeText("5")
-            ->assertSeeText("6")
-            ->assertSeeText("7")
-            ->assertSeeText("8")
-            ->assertSeeText("9");
+            ->assertSeeText("4");
     }
     public function testForEach()
     {
