@@ -9,8 +9,7 @@
 </head>
 
 <body>
-    {{-- {!! $name !!} --}}
-    {{ $name }}
+    {!! $name !!}
 </body>
 
 </html>
