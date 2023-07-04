@@ -2,7 +2,7 @@
     <body>
         <p>
             @isset($name)
-                Hello, my name is {{$name}}
+                Hello, my name is {{ $name }}
             @endisset
         </p>
         

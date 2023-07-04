@@ -43,5 +43,11 @@ class HelloTest extends TestCase
         $this->view("unless", ["isAdmin" => false])
             ->assertSeeText("You are not Admin.");
     }
+
+    public function testRaw()  {
+        $this->view("raw")
+        ->assertSeeText("Edwin")
+        ->assertSeeText("Indonesia");
+    }
     
 }

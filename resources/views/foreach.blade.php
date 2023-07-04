@@ -3,7 +3,7 @@
 <body>
     <ul>
         @foreach($hobbies as $hobby)
-        <li>{{$hobby}}</li>
+        <li>{{ $hobby }}</li>
         @endforeach
     </ul>
 </body>
