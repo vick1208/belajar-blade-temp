@@ -26,13 +26,13 @@ class HelloTest extends TestCase
     }
     public function testIf()
     {
-        $this->view("ifstate", ["hobbies" => []] )
+        $this->view("if", ["hobbies" => []] )
             ->assertSeeText("I do not have any hobbies!");
 
-        $this->view("ifstate", ["hobbies" => ["Coding"]] )
+        $this->view("if", ["hobbies" => ["Coding"]] )
             ->assertSeeText("I have one hobby!");
 
-        $this->view("ifstate", ["hobbies" => ["Coding", "Gaming"]] )
+        $this->view("if", ["hobbies" => ["Coding", "Gaming"]] )
             ->assertSeeText("I have multiple hobbies!");
     }
     public function testUnless()
