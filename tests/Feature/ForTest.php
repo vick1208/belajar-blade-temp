@@ -23,17 +23,23 @@ class ForTest extends TestCase
             ->assertSeeText("Coding")
             ->assertSeeText("Gaming");
     }
-
+    
     public function testForElse()
     {
         $this->view("forelse", ["hobbies" => ["Coding", "Gaming"]])
-            ->assertSeeText("Coding")
-            ->assertSeeText("Gaming")
-            ->assertDontSeeText("Tidak Punya Hobby");
-
+        ->assertSeeText("Coding")
+        ->assertSeeText("Gaming")
+        ->assertDontSeeText("Tidak Punya Hobby");
+        
         $this->view("forelse", ["hobbies" => []])
-            ->assertDontSeeText("Coding")
-            ->assertDontSeeText("Gaming")
-            ->assertSeeText("Tidak Punya Hobby");
+        ->assertDontSeeText("Coding")
+        ->assertDontSeeText("Gaming")
+        ->assertSeeText("Tidak Punya Hobby");
+    }
+    public function testLoopVar()
+    {
+        $this->view("loopvar", ["hobbies" => ["Coding", "Gaming"]])
+            ->assertSeeText("1. Coding")
+            ->assertSeeText("2. Gaming");
     }
 }
