@@ -7,7 +7,7 @@
         @elseif(count($hobbies) > 1)
         I have multiple hobbies!
         @else
-        I don't have any hobbies!
+        I do not have any hobbies!
         @endif
     </p>
 </body>
