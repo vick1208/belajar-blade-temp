@@ -54,5 +54,20 @@ class HelloTest extends TestCase
         $this->view('other.stack')
         ->assertSeeInOrder(["third.js","first.js","second.js"]);
     }
+    public function testInherit() {
+        $this->view('child')
+        ->assertSeeText("Nama apl - Halaman Utama")
+        ->assertSeeText("Default header")
+        ->assertSeeText("Deskripsi header")
+        ->assertDontSeeText("Default content")
+        ->assertSeeText("Ini halaman utama");
+    }
+    public function testInheritWithoutOverride() {
+        $this->view('child-def')
+        ->assertSeeText("Nama apl - Halaman Utama")
+        ->assertSeeText("Default header")->assertSeeText("Default content")
+        ->assertDontSeeText("Deskripsi header")
+        ->assertDontSeeText("Ini halaman utama");
+    }
     
 }
