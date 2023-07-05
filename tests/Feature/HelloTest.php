@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Person;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -72,6 +73,19 @@ class HelloTest extends TestCase
     public function testInjection(){
         $this->view("other.service-inj",["name" => "Erik"])
         ->assertSeeText("Hello Erik");
+    }
+
+    public function testExtending(){
+        $this->view("other.extending",["name" => "Erik"])
+        ->assertSeeText("Hello Erik");
+    }
+    public function testEchoCustom() : void {
+        $person = new Person();
+        $person->name = "Erika";
+        $person->address = "Indonesia";
+
+        $this->view("echo-cust",["person" => $person])
+        ->assertSeeText("Erika : Indonesia");
     }
     
 }
