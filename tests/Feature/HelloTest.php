@@ -49,5 +49,10 @@ class HelloTest extends TestCase
         ->assertSeeText("Edwin")
         ->assertSeeText("Indonesia");
     }
+
+    public function testStack() {
+        $this->view('other.stack')
+        ->assertSeeInOrder(["third.js","first.js","second.js"]);
+    }
     
 }
