@@ -69,5 +69,9 @@ class HelloTest extends TestCase
         ->assertDontSeeText("Deskripsi header")
         ->assertDontSeeText("Ini halaman utama");
     }
+    public function testInjection(){
+        $this->view("other.service-inj",["name" => "Erik"])
+        ->assertSeeText("Hello Erik");
+    }
     
 }
